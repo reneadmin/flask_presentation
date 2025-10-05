@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content_block">
+    <div class="grid_container">
+    
+
+        <div class="item" >
+            
+            <form method="post" action="/assignPersonas">
+                <div class="form-group">
+
+
+
+                    <div class="row mb-3">
+                        <label for="personaId" class="col-sm-2 col-form-label">Persona</label>
+                        <div class="col-sm-10">
+
+                        <select name="personaId" class="form-control"  id="persona" >
+                            {% for o in selectListPersona %}
+                            <option value="{{ o.id }}">
+                                {{ o.persona }}
+                            </option>
+                            {% endfor %}
+                            
+                        </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="personaGender" class="col-sm-2 col-form-label">M/V</label>
+                        <div class="col-sm-10">
+                            <select name="personaGender" class="form-control" id="personaGender" >
+                            {% for o in selectListPersonaGender %}
+                                <option value="{{ o.gender }}">{{ o.gender }}</option>
+                            {% endfor %}
+                            </select>
+                        
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Naam</label>
+                        <div class="col-sm-10">
+
+                            <input type="text" class="form-control" id="personaName" name="personaName" placeholder="Name"  required>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10">
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>                    
+
+            
+            
+                </div>
+            </form>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="persona_grid">
+
+        {% for o in selectListPersona %}
+
+
+            
+            <div class="persona_grid_avatar">
+                
+                {% if (o.personaGender != '') and (o.personaName != '') %}
+                
+                <img id="selectedPersonaIcon" src="{{ url_for('static', filename='img/avatars/' + o.personaGender + o.persona + '.png') }}" alt="Persona Icon" width="201px" height="201px"> 
+                <div class="avatarName">
+                    {{ o.personaName }} - {{o.persona}}
+                </div>
+                {%else %}
+                <img id="selectedPersonaIcon" src="{{ url_for('static', filename='img/avatars/anonymous.png') }}" alt="Persona Icon"   width="202px"  height="202px"> 
+                <div class="avatarName">
+                    Unknown
+                </div>
+                {%endif%}
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div> <!-- end content block-->
+<!--
+<script>
+
+    window.static_folder = "{{url_for('static',filename='img/avatars')}}";
+        
+    const updatePage =   function(){
+        //alert('hi');
+        //alert("{{selectListPersona}}");
+        const selectListPersona = "{{selectListPersona}}";
+        //alert(selectListPersona);
+        
+        
+        // Assuming selectListPersona is available in the global scope
+        const firstName             = document.getElementById("firstName_{{personaIndex}}");
+        const selectedPersona       = document.getElementById("persona");
+        const selectedGender        = document.getElementById("gender");
+
+        const selectedPersonaIcon   = document.getElementById("selectedPersonaIcon");
+        
+        const yourPersona           = document.getElementById("yourPersona");
+
+        const nodePersona = document.createTextNode(selectedPersona.value);
+        const nodeName = document.createTextNode(firstName.value);
+
+        yourPersona.innerHTML = "";
+        yourPersona.appendChild(nodePersona);
+        yourName.innerHTML = "";
+        yourName.appendChild(nodeName);
+
+
+        selectedPersonaIcon.src = `${window.static_folder}/${selectedGender.value}${selectedPersona.value}.png`;
+
+    }
+    this.persona.addEventListener("change", updatePage );
+    this.gender.addEventListener("change", updatePage );
+    this.firstName.addEventListener("change", updatePage );
+
+
+    ;
+
+
+  </script>
+  
+-->
+
+
+
+
+{% endblock %}

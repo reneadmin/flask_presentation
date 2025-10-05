@@ -1,0 +1,2075 @@
+/*
+- ilionx color: #E8003C;
+- Schermresolutie: 1728 x 1117
+*/
+:root {
+  --Divider-bgImage-size-arrowGrey: 400px 800px;
+  --Divider-bgImage-size-arrowRed: 800px 100%;
+
+  --Divider-Image-height: 1200px;
+  --Divider-Image-column: 18 ;
+  --Divider-Image-row: 44 / span 10;
+
+  --Divider-bgImage-column: 1 / span 20;
+  --Divider-bgImage-row: 1 / span 200;
+  
+
+  --slide-block-grid-columns: repeat(100, 10px);
+  --slide-block-grid-rows: repeat(110, 10px);
+
+  --slide-block-agenda-columns:  repeat(80, 10px);
+  --slide-block-agenda-rows: repeat(20, 10px);
+  --slide-block-agenda-padding-top: 200px;
+  --slide-block-agenda-text-column: 12 / span 10;
+  --slide-block-agenda-bullet-column: 20 ;
+  --slide-block-agenda-image-column: 10 ;
+
+  --item-grid-image-column: 8 / span 1;
+  --item-grid-image-row: 44 / span 20;;
+  --item-grid-image-height: 700px;
+
+  --item-grid-button-row: 86 / span 6;
+  --item-grid-button-column: 10 / span 20;
+ 
+  --item-grid-image-full-screen-column: 6 / span 30;
+  --item-grid-image-full-screen-row: 30 / span 40;
+  --item-grid-image-full-screen-height: 900px;
+
+  --persona-grid-columns: repeat(100, 10px);
+  --persona-grid-rows: repeat(110, 10px);
+
+  --persona-grid-avatar-column: ;
+  --persona-grid-avatar-row: ;
+
+
+
+  --item-grid-callout-column:  6 / span 30;
+  
+  --item-grid-avatar-column:  2 / span 6;
+  --item-grid-avatar-row:  16 / span 24;
+
+  --item-list-container-grid-columns: repeat(200, 20px);
+  --item-list-container-grid-rows:  repeat(20, 50px);
+
+  --item-list-container-row:  20;
+  --item-list-bullet-column: 48;
+  --item-list-text-column: 52 / span 30;
+  
+  --item-list-fullscreen-container-row:  20;
+  --item-list-fullscreen-bullet-column: 12;
+  --item-list-fullscreen-text-column: 18 / span 90;
+  
+  --item-grid-image-dialoog-column: 7 / span 6;
+  --item-grid-image-dialoog-row: 20 ;
+  --item-grid-image-dialoog-width: 100%; 
+  --item-grid-image-dialoog-height: 100%;
+
+
+  --item-grid-dialoog-text-column: 6 / span 17;
+  --item-grid-dialoog-text-row: 4;
+
+
+
+
+
+}
+
+body {
+   
+  margin: 0;
+  animation: fadeIn 2s forwards;    
+  opacity: 0;
+  
+    }
+
+  @keyframes fadeIn {
+          to {
+              opacity: 1;
+          }
+      }      
+div.bgArrow {
+  position: absolute;
+  xmargin-left: 100px;
+  top: 0px;
+  left: 00px;
+  display: flex;
+
+   background-image: url('/static/img/ilionxArrowGrey.svg');
+  background-repeat: no-repeat;
+  background-size: var(--General-bgImage-size-arrowRed);
+  background-position: right;
+  opacity: .3;
+   pointer-events: none;
+}       
+
+div.pageContainer {
+  width: 100%;
+  width: 100%;
+       
+  /* aspect-ratio: 1 / 1; */
+  XXXXXXXXXXXXXXXXanimation: 1s linear 0s  alternate sun-rise;
+}
+
+
+@keyframes sun-rise {
+  from {
+    /* pushes the sun down past the viewport */
+    transform: translateX(-110vh);
+  }
+  to {
+    /* returns the sun to its default position */
+    transform: translateX(0);
+  }
+}
+
+
+.pageFooter {
+  margin-top: auto;
+  position: absolute;
+  bottom: 0px;  
+  right: 0px;
+  width: 100%;
+  height: 70px;
+  padding-top: 10px;
+  xborder-top: 1px solid #E8003C;;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 20pt;
+    xage: url('/static/img/ilionxfooter.svg');
+        background-repeat: no-repeat;
+  background-size: 60px;
+
+
+  xbackground-color: rgb(0, 0, 0);
+}
+
+div.content_block {
+
+    border: 2px #eee solid;
+    margin: 2px;
+    padding: 2px;
+}
+div.pageHeader {
+  margin: 0px;
+}
+div.pageHeader .title{
+  position: absolute;
+
+  xborder: 1px solid #E8003C;
+  top: 4px;
+  text-anchor: middle;
+  left: 50%;
+  transform: translate(-50%, 0%) 
+}
+
+div.slide_header .content{
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  left: 500px;
+  right: 200px;
+
+}
+div.slide_content {
+  margin: 0px;
+}
+
+div.welcome_text {
+  grid-column: 2 / span 12;
+  grid-row: 15 / span 120;
+  align-self: center;
+  color: white;
+  font-size: 24pt;
+  text-align: center;
+  
+  xborder: 1px solid black;
+
+}
+h1 {
+    xbackground-color: lightslategray;
+    color: white;
+    font-weight: 500;
+    text-align: left;
+    xtext-decoration-line: underline;
+    margin-top: 0px;
+    padding: 0px;
+
+}
+
+/* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+
+.grid_container_useCase {
+    display: grid;
+    grid-template-columns: 100px 300px 800px ;
+    grid-template-rows: repeat(10, 20px) ;
+    column-gap: 30px;
+    xborder: 1px solid red;
+    margin-left: 10px;
+    margin-right: 10px
+  }
+
+.grid_container_useCase .item {
+    text-align: center;
+    grid-column: 2 ;
+    grid-row: 1 ;
+    xborder: 1px solid green;
+}
+
+.grid_container_useCase .itemDescription {
+    text-align: center;
+    grid-column: 3;
+    grid-row: 1 / span 10;
+    xborder: 1px solid green;
+}
+
+
+/* GRID CONTAINER*/
+
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 400px 200px 200px;
+    column-gap: 30px;
+    xborder: 1px solid red;
+    margin-left: 10px;
+    margin-right: 0px
+  }
+
+.grid_container .item {
+    text-align: center;
+    xborder: 1px solid green;
+}
+/* GRID CONTAINER INDEX.HTML*/
+
+
+.grid_container_index {
+    display: grid;
+    grid-template-columns: repeat(3, 190px);
+    grid-template-rows: repeat(3, 50px);
+    column-gap: 30px;
+    row-gap: 30px;
+    xborder: 1px solid red;
+    margin-left: 10px;
+    margin-right: 10px
+  }
+
+.grid_container_index .item {
+    text-align: center;
+    xborder: 1px solid green;
+}
+
+
+/*  divider */
+
+.item_divider {
+    xheight: 1000px;
+    padding-top: 0px;
+    background-image: url('/static/img/ilionxArrowLargeRed.svg');
+    background-repeat: no-repeat;
+    background-size:var(--Divider-bgImage-size-arrowRed);
+    grid-column: var(--Divider-bgImage-column);
+    grid-row: var(--Divider-bgImage-row);
+
+  }
+
+/* LIST GRID: Assign Personas*/
+
+.persona_grid {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns:  var(--persona-grid-columns);
+
+    grid-template-rows:   var(--persona-grid-rows);
+     
+    xborder: 1px solid #ccc;
+  }
+
+
+div.persona_grid_avatar {
+  /* width: 150px; */
+  border: 1px solid steelblue;
+  text-align: center;
+  border-radius: 6px;
+  grid-column: var(--persona-grid-avatar-column) ;
+  xgrid-row: var(--persona-grid-avatar-row) ;
+
+}
+ div.avatarName{
+  color: white;
+  background-color: steelblue;
+  font-weight: 500;
+  font-size: 12pt;
+  border: 1px solid steelblue;
+  margin-top:12px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* SLIDE BLOCK GRID */
+div.item_grid_avatar {
+  /* width: 150px; */
+  border: 1px solid steelblue;
+  text-align: center;
+  border-radius: 6px;
+  grid-column: var(--item-grid-avatar-column) ;
+  grid-row: var(--item-grid-avatar-row) ;
+
+}
+ div.avatarName{
+  color: white;
+  background-color: steelblue;
+  font-weight: 500;
+  font-size: 12pt;
+  border: 1px solid steelblue;
+  margin-top:12px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.slide_block_grid {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns:  var(--slide-block-grid-columns);
+
+    grid-template-rows:   var(--slide-block-grid-rows);
+     
+    xborder: 1px solid #ccc;
+  }
+
+
+.item_grid_callout {
+    text-align: left;
+    vertical-align: top;
+    grid-column: var(--item-grid-callout-column) ; 
+    xborder: 1px solid #ccc;
+    
+}
+
+div.item_grid_image_Stelling,   
+div.item_grid_image_Boodschap,
+div.item_grid_image_Vraag,
+div.item_grid_image_Denkwolk {
+
+    grid-row:  var(--item-grid-image-row) ;
+    grid-column: var(--item-grid-image-column) ;
+    height: var(--item-grid-image-height) ;
+    text-align: center;;
+    align-self: center;
+
+    xborder: 1px solid black;
+    
+}
+.slide_block_grid .item_button {
+    text-align: center;
+    vertical-align: top;
+    grid-row:  var(--item-grid-button-row) ;
+    grid-column:  var(--item-grid-button-column);
+        xborder: 1px solid red;
+    
+}
+
+div.item_grid_image_Fullscreen {
+
+    grid-row    :  var(--item-grid-image-full-screen-row);
+    grid-column:  var(--item-grid-image-full-screen-column);
+    align-self: center;
+    height:  var(--item-grid-image-full-screen-height);
+    
+    text-align: center;;
+    xborder: 1px solid black;
+    
+}
+
+div.item_grid_image_Divider  {
+
+    grid-row:  var(--Divider-Image-row) ; 
+    grid-column: var(--Divider-Image-column) ;
+    height:       var(--Divider-Image-height) ;
+  align-self: center;
+   
+
+  xborder: 1px solid black;
+    
+}
+
+div.item_grid_image_Dialoog {
+
+    grid-row:  var(--item-grid-image-dialoog-row); 
+    height: var(--item-grid-image-dialoog-height); 
+    grid-column: var(--item-grid-image-dialoog-column); 
+    align-items: center;
+    text-align: center;
+
+    
+}
+
+.slide_block_grid .item_iframe {
+    text-align: left;
+    vertical-align: top;
+    grid-row:  2 ;
+    grid-column:  3/ span 3;
+    xborder: 1px solid #ccc;
+    
+}
+
+
+/* SLIDE BLOCK BOODSCHAP */
+
+
+.slide_block_boodschap {
+    margin-left: 180px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns:  80px 200px 180px  300px 300px;
+    grid-template-rows: 190px 20px 240px 100px 100px 50px;
+    xborder: 1px solid #ccc;
+  }
+
+ .item_grid_avatar {
+    text-align: center;
+    vertical-align: bottom;
+    xborder: 1px solid #ccc;
+    grid-column: 2 / span 1;
+    grid-row:  3 / span 1;
+
+}
+
+.slide_block_boodschap .item_boodschap {
+    text-align: left;
+    vertical-align: top;
+    grid-row:  1 ;
+    grid-column: 3 / span 3;
+    xborder: 1px solid #ccc;
+    
+}
+
+
+.slide_block_boodschap .item_image {
+    text-align: center;
+    vertical-align: top;
+    grid-row:  2 ;
+    grid-column: 3 / span 3;
+    xborder: 1px solid #ccc;
+    
+}
+
+
+
+.slide_block_boodschap .item_button {
+    text-align: center;
+    vertical-align: top;
+    grid-row:  4 ;
+    grid-column: 1 / span 6;
+    xborder: 1px solid #ccc;
+    
+}
+
+/* SLIDE BLOCK AGENDA */
+
+.slide_block_agenda {
+    display: grid;
+    padding-top: var(--slide-block-agenda-padding-top);
+    grid-template-columns: var(--slide-block-agenda-columns);
+    grid-template-rows:    var(--slide-block-agenda-rows);
+    xalign-items: center;;
+    column-gap: 40px;
+    row-gap: 60px;
+    xborder: 1px solid #ccc;
+
+  }
+  
+  .slide_block_agenda .item_image{
+
+    xtext-align: center;
+    xvertical-align: top;
+    xalign-self: center;
+    grid-column:  var(--slide-block-agenda-image-column);
+    xborder: 1px solid black;
+    xbackground-color: #00e80c;
+  }
+  
+.slide_block_agenda .item_agenda{
+
+    xtext-align: center;
+    grid-column: var(--slide-block-agenda-bullet-column);
+    xgrid-row: 1 / span 20;
+    /* grid-column-start: 6; */
+    xvertical-align: top;
+    xdisplay: subgrid;
+    xgrid-column: 1;
+
+}
+
+  .slide_block_agenda .item_agenda_text{
+    XXXXtransform: rotate(90deg);
+    xmargin-left: -25px; 
+    font-size: 20pt;
+    font-weight: 800;;
+    color: #E8003C;
+
+    xborder: 1px solid red;
+    /* grid-column-start: 6; */
+    xtext-align: left;
+    xvertical-align: center;
+    xdisplay: subgrid;
+    xgrid-column: 24;
+
+}
+  
+
+
+.ballred {
+  display: block;
+  background: rgb(140, 0, 37);
+  margin: 0;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background: radial-gradient(circle at 12px 12px,  #E8003C,  rgb(140, 0, 37));
+}
+
+
+.ballgrey {
+  display: block;
+  background: rgb(58, 58, 58);
+  margin: 0;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background: radial-gradient(circle at 12px 12px,  #a9a7a8,  rgb(58, 58, 58));
+}
+
+/* ITEM LIST */
+.item_list_container_Stelling, .item_list_container_Vraag, .item_list_container_Boodschap, .item_list_container_Denkwolk, .item_list_container_Divider {
+    margin-left: 0px;
+    margin-right: 0px;  
+
+    display: grid;
+    grid-template-columns:  var(--item-list-container-grid-columns); 
+    grid-template-rows:     var(--item-list-container-grid-rows);
+    grid-row:               var(--item-list-container-row);
+    /* grid-template-rows: 190px 20px 200px; */
+    xborder: 1px solid #ccc;
+}
+
+
+.item_list_container_Stelling .bullet , 
+.item_list_container_Vraag .bullet , 
+.item_list_container_Boodschap .bullet , 
+.item_list_container_Denkwolk  .bullet , 
+.item_list_container_Divider  .bullet {
+  /* grid-column: 3; */
+  grid-column: var(--item-list-bullet-column);
+  /* grid-column: 2; */
+  xborder: 1px solid black;
+
+}
+
+.item_list_container_Stelling .text , 
+.item_list_container_Vraag .text , 
+.item_list_container_Boodschap .text , 
+.item_list_container_Denkwolk  .text , 
+.item_list_container_Divider  .text{
+  /* grid-column: 3; */
+  grid-column: var(--item-list-text-column);
+  padding-top:0px;
+  font-size: 18pt;
+  font-weight: 800;;
+  -webkit-text-stroke: white 0.5px;
+  color: #E8003C;
+  
+  xgrid-row: 10;
+  xborder: 1px solid black;
+
+}
+
+.item_list_container_Fullscreen{
+    margin-left: 0px;
+    margin-right: 0px;  
+
+    display: grid;
+    grid-template-columns:  var(--item-list-container-grid-columns); 
+    grid-template-rows:     var(--item-list-container-grid-rows);
+    grid-row:               var(--item-list-container-row);
+    /* grid-template-rows: 190px 20px 200px; */
+    xborder: 1px solid #ccc;
+}
+
+.item_list_container_Fullscreen .bullet {
+  /* grid-column: 3; */
+  grid-column: var(--item-list-fullscreen-bullet-column);
+  /* grid-column: 2; */
+  xborder: 1px solid black;
+
+}
+
+.item_list_container_Fullscreen .text {
+  /* grid-column: 3; */
+  grid-column: var(--item-list-fullscreen-text-column);
+  padding-top:0px;
+  font-size: 18pt;
+  font-weight: 800;;
+  -webkit-text-stroke: white 0.5px;
+  color: #E8003C;
+  
+  xgrid-row: 10;
+  xborder: 1px solid black;
+
+}
+
+
+/* SLIDE BLOCK DIALOOG */
+
+.slide_block_dialoog_container {
+    margin-left: 0px;
+    margin-right: 0px;  
+    height: 1000px;
+    display: grid;
+    grid-template-columns:  47% 47%;
+    xgrid-template-rows: repeat(20, 2px);
+    xborder: 1px solid #ccc;
+}
+.slide_block_dialoog_container .item {
+  /* grid-column: 3; */
+  grid-row: 1;
+  /* grid-column: 2; */
+  xborder-left: 1px solid lightgrey;
+
+}
+
+.slide_block_dialoog {
+  margin-left: 100px;
+  margin-top: 30px;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns:   repeat(8, 100px);
+    xgrid-template-rows: repeat(10, 50px);
+    xborder: 1px solid #ccc;
+  }
+
+
+
+.item_dialoog {
+    text-align: left;
+    vertical-align: top;
+    grid-column: var(--item-grid-dialoog-text-column);
+    grid-row:  var(--item-grid-dialoog-text-row);
+    xborder: 1px solid #ccc;
+    
+}
+
+
+
+
+
+
+/* SLIDE TIME */
+.slide_time{
+  position: absolute;
+  display:flex;
+  left: 10px;
+  bottom: 10px;
+  font-size: 12pt;
+  xborder: 1px solid #333;
+  
+}
+.time{
+  
+  font-size: 12pt;
+  border: 1px solid #eee;
+  min-width: 20px;
+  width: 100px;
+  padding: 2px;
+  padding-top: 5px;
+  margin: 2px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+/* SLIDE NAV */
+.slide_nav {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+.slide_nav a {
+  height: 40px;
+  font-size: 14pt;
+  color: white;
+  background-color:  #E8003C;
+  border: 1px solid rgb(4, 4, 4);
+  opacity: 1;
+
+}
+
+div.slideNumber {
+  position: absolute;
+  bottom: 10px;
+  right: 205px;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 20px;
+  color: white;
+  width: 100px;
+  height: 40px;
+  font-size: 18pt;
+  background-color: #E8003C;
+  border: 1px solid black;
+  padding-bottom: 0px;
+}
+
+
+
+
+div.slideSkippable {
+  position: absolute;
+  bottom: 10px;
+  right: 300px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: bottom;
+  
+  
+  xßborder: 1px solid green;
+}
+
+div.slideSkippable .skipno {
+  background-color: red;
+}
+
+
+div.slideSkippable .skipyes {
+  background-color: green;
+}
+
+
+/* BUBBLES */
+
+p {
+  margin:1em 0;
+}
+
+
+blockquote {
+  margin:1em 0;
+}
+
+blockquote p {
+  margin:0;
+  font-size:20pt;
+}
+
+.follow {
+  clear:both;
+  margin-top:2em;
+  font-size:1.125em;
+}
+
+.follow span {
+  font-weight:bold;
+}
+
+
+/*
+ Should you want to set a background colour on a containing element
+ certain types of bubble effect may require you to include these
+ style declarations.
+ */
+.content {
+  position:relative;
+  z-index:1;
+  margin-bottom: 10px;
+}
+
+
+/* ============================================================================================================================
+== BUBBLE WITH AN ISOCELES TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-isosceles {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  color:#000;
+  background:#f3961c; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+  background:-moz-linear-gradient(#f9d835, #f3961c);
+  background:-o-linear-gradient(#f9d835, #f3961c);
+  background:linear-gradient(#f9d835, #f3961c);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for top positioned triangle
+------------------------------------------ */
+
+.triangle-isosceles.top {
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#f3961c), to(#f9d835));
+  background:-moz-linear-gradient(#f3961c, #f9d835);
+  background:-o-linear-gradient(#f3961c, #f9d835);
+  background:linear-gradient(#f3961c, #f9d835);
+}
+
+/* Variant : for left/right positioned triangle
+------------------------------------------ */
+
+.triangle-isosceles.left {
+  margin-left:50px;
+  background:#f3961c;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-isosceles.right {
+  margin-right:50px;
+  background:#f3961c;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content:"";
+  position:absolute;
+  bottom:-15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#f3961c transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.triangle-isosceles.top:after {
+  top:-15px; /* value = - border-top-width - border-bottom-width */
+  right:50px; /* controls horizontal position */
+  bottom:auto;
+  left:auto;
+  border-width:0 15px 15px; /* vary these values to change the angle of the vertex */
+  border-color:#f3961c transparent;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-isosceles.left:after {
+  top:16px; /* controls vertical position */
+  left:-50px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  border-width:10px 50px 10px 0;
+  border-color:transparent #f3961c;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-isosceles.right:after {
+  top:16px; /* controls vertical position */
+  right:-50px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  left:auto;
+  border-width:10px 0 10px 50px;
+  border-color:transparent #f3961c;
+}
+
+
+/* ============================================================================================================================
+== BUBBLE WITH A RIGHT-ANGLED TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-right {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  color:#fff;
+  background:#075698; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+  background:-moz-linear-gradient(#2e88c4, #075698);
+  background:-o-linear-gradient(#2e88c4, #075698);
+  background:linear-gradient(#2e88c4, #075698);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for top positioned triangle
+------------------------------------------ */
+
+.triangle-right.top {
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#075698), to(#2e88c4));
+  background:-moz-linear-gradient(#075698, #2e88c4);
+  background:-o-linear-gradient(#075698, #2e88c4);
+  background:linear-gradient(#075698, #2e88c4);
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-right.left {
+  margin-left:40px;
+  background:#075698;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-right.right {
+  margin-right:40px;
+  background:#075698;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-right:after {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#075698 transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.triangle-right.top:after {
+  top:-20px; /* value = - border-top-width - border-bottom-width */
+  right:50px; /* controls horizontal position */
+  bottom:auto;
+  left:auto;
+  border-width:20px 20px 0 0; /* vary these values to change the angle of the vertex */
+  border-color:transparent #075698;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-right.left:after {
+  top:16px;
+  left:-40px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
+  border-color:transparent #075698;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-right.right:after {
+  top:16px;
+  right:-40px; /* value = - border-left-width - border-right-width */
+  bottom:auto;
+  left:auto;
+  border-width:15px 0 0 40px; /* vary these values to change the angle of the vertex */
+  border-color:transparent #075698 ;
+}
+
+
+/* ============================================================================================================================
+== BUBBLE WITH AN OBTUSE TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-obtuse {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  color:#fff;
+  background:#c81e2b;
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#f04349), to(#c81e2b));
+  background:-moz-linear-gradient(#f04349, #c81e2b);
+  background:-o-linear-gradient(#f04349, #c81e2b);
+  background:linear-gradient(#f04349, #c81e2b);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for top positioned triangle
+------------------------------------------ */
+
+.triangle-obtuse.top {
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#c81e2b), to(#f04349));
+  background:-moz-linear-gradient(#c81e2b, #f04349);
+  background:-o-linear-gradient(#c81e2b, #f04349);
+  background:linear-gradient(#c81e2b, #f04349);
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-obtuse.left {
+  margin-left:50px;
+  background:#c81e2b;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-obtuse.right {
+  margin-right:50px;
+  background:#c81e2b;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates the wider right-angled triangle */
+.triangle-obtuse:before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:60px; /* controls horizontal position */
+  border:0;
+  border-right-width:30px; /* vary this value to change the angle of the vertex */
+  border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :after */
+  border-style:solid;
+  border-color:transparent #c81e2b;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* creates the narrower right-angled triangle */
+.triangle-obtuse:after {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:80px; /* value = (:before's left) + (:before's border-right/left-width)  - (:after's border-right/left-width) */
+  border:0;
+  border-right-width:10px; /* vary this value to change the angle of the vertex */
+  border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :before */
+  border-style:solid;
+  border-color:transparent #fff;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.triangle-obtuse.top:before {
+  top:-20px; /* value = - border-top-width - border-bottom-width */
+  bottom:auto;
+  left:auto;
+  right:60px; /* controls horizontal position */
+  border:0;
+  border-left-width:30px; /* vary this value to change the width of the triangle */
+  border-top-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :after */
+  border-color:transparent #c81e2b;
+}
+
+.triangle-obtuse.top:after {
+  top:-20px; /* value = - border-top-width - border-bottom-width */
+  bottom:auto;
+  left:auto;
+  right:80px; /* value = (:before's right) + (:before's border-right/left-width)  - (:after's border-right/left-width) */
+  border-width:0;
+  border-left-width:10px; /* vary this value to change the width of the triangle */
+  border-top-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :before */
+  border-color:transparent #fff;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-obtuse.left:before {
+  top:15px; /* controls vertical position */
+  bottom:auto;
+  left:-50px; /* value = - border-left-width - border-right-width */
+  border:0;
+  border-bottom-width:30px; /* vary this value to change the height of the triangle */
+  border-left-width:50px; /* vary this value to change the width of the triangle. must be equal to the corresponding value in :after */
+  border-color:#c81e2b transparent;
+}
+
+.triangle-obtuse.left:after {
+  top:35px; /* value = (:before's top) + (:before's border-top/bottom-width)  - (:after's border-top/bottom-width) */
+  bottom:auto;
+  left:-50px; /* value = - border-left-width - border-right-width */
+  border:0;
+  border-bottom-width:10px; /* vary this value to change the height of the triangle */
+  border-left-width:50px; /* vary this value to change the width of the triangle. must be equal to the corresponding value in :before */
+  border-color:#fff transparent;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-obtuse.right:before {
+  top:15px; /* controls vertical position */
+  bottom:auto;
+  left:auto;
+  right:-50px; /* value = - border-left-width - border-right-width */
+  border:0;
+  border-bottom-width:30px; /* vary this value to change the height of the triangle */
+  border-right-width:50px; /* vary this value to change the width of the triangle. must be equal to the corresponding value in :after */
+  border-color:#c81e2b transparent;
+}
+
+.triangle-obtuse.right:after {
+  top:35px; /* value = (:before's top) + (:before's border-top/bottom-width)  - (:after's border-top/bottom-width) */
+  bottom:auto;
+  right:-50px; /* value = - border-left-width - border-right-width */
+  left:auto;
+  border:0;
+  border-bottom-width:10px; /* vary this value to change the height of the triangle */
+  border-right-width:50px; /* vary this value to change the width of the triangle. must be equal to the corresponding value in :before */
+  border-color:#fff transparent;
+}
+
+
+/* ============================================================================================================================
+== BUBBLE WITH A BORDER AND TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-border {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  border:5px solid #5a8f00;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-border.left {
+  margin-left:30px;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-border.right {
+  margin-right:30px;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-border:before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:40px; /* controls horizontal position */
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#5a8f00 transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* creates the smaller  triangle */
+.triangle-border:after {
+  content:"";
+  position:absolute;
+  bottom:-13px; /* value = - border-top-width - border-bottom-width */
+  left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+  border-width:13px 13px 0;
+  border-style:solid;
+  border-color:#fff transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.top:before {
+  top:-20px; /* value = - border-top-width - border-bottom-width */
+  bottom:auto;
+  left:auto;
+  right:40px; /* controls horizontal position */
+  border-width:0 20px 20px;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.top:after {
+  top:-13px; /* value = - border-top-width - border-bottom-width */
+  bottom:auto;
+  left:auto;
+  right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+  border-width:0 13px 13px;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.left:before {
+  top:10px; /* controls vertical position */
+  bottom:auto;
+  left:-30px; /* value = - border-left-width - border-right-width */
+  border-width:15px 30px 15px 0;
+  border-color:transparent #5a8f00;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.left:after {
+  top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  bottom:auto;
+  left:-21px; /* value = - border-left-width - border-right-width */
+  border-width:9px 21px 9px 0;
+  border-color:transparent #fff;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.right:before {
+  top:10px; /* controls vertical position */
+  bottom:auto;
+  left:auto;
+  right:-30px; /* value = - border-left-width - border-right-width */
+  border-width:15px 0 15px 30px;
+  border-color:transparent #5a8f00;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.right:after {
+  top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  bottom:auto;
+  left:auto;
+  right:-21px; /* value = - border-left-width - border-right-width */
+  border-width:9px 0 9px 21px;
+  border-color:transparent #fff;
+}
+
+
+/* ============================================================================================================================
+== SPEECH BUBBLE ICON
+** ============================================================================================================================ */
+
+.example-commentheading {
+  position:relative;
+  padding:0;
+  color:#b513af;
+}
+
+/* creates the rectangle */
+.example-commentheading:before {
+  content:"";
+  position:absolute;
+  top:9px;
+  left:-25px;
+  width:15px;
+  height:10px;
+  background:#b513af;
+  /* css3 */
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+}
+
+/* creates the triangle */
+.example-commentheading:after {
+  content:"";
+  position:absolute;
+  top:15px;
+  left:-19px;
+  border:4px solid transparent;
+  border-left-color:#b513af;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+
+/* ============================================================================================================================
+== BLOCKQUOTE WITH RIGHT-ANGLED TRIANGLE
+** ============================================================================================================================ */
+
+.example-right {
+  position:relative;
+  padding:15px 30px;
+  margin:0;
+  color:#fff;
+  background:#5a8f00; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#b8db29), to(#5a8f00));
+  background:-moz-linear-gradient(#b8db29, #5a8f00);
+  background:-o-linear-gradient(#b8db29, #5a8f00);
+  background:linear-gradient(#b8db29, #5a8f00);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-right + p {margin:15px 0 2em 85px; font-style:italic;}
+
+/* creates the triangle */
+.example-right:after {
+  content:"";
+  position:absolute;
+  bottom:-50px;
+  left:50px;
+  border-width:0 20px 50px 0px;
+  border-style:solid;
+  border-color:transparent #5a8f00;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+
+/* ============================================================================================================================
+== BLOCKQUOTE WITH OBTUSE TRIANGLE
+** ============================================================================================================================ */
+
+.example-obtuse {
+  position:relative;
+  padding:15px 30px;
+  margin:0;
+  color:#000;
+  background:#f3961c; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+  background:-moz-linear-gradient(#f9d835, #f3961c);
+  background:-o-linear-gradient(#f9d835, #f3961c);
+  background:linear-gradient(#f9d835, #f3961c);
+  /* Using longhand to avoid inconsistencies between Safari 4 and Chrome 4 */
+  -webkit-border-top-left-radius:25px 50px;
+  -webkit-border-top-right-radius:25px 50px;
+  -webkit-border-bottom-right-radius:25px 50px;
+  -webkit-border-bottom-left-radius:25px 50px;
+  -moz-border-radius:25px / 50px;
+  border-radius:25px / 50px;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-obtuse + p {margin:10px 150px 2em 0; text-align:right; font-style:italic;}
+
+/* creates the larger triangle */
+.example-obtuse:before {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  right:80px;
+  border-width:0 0 30px 50px;
+  border-style:solid;
+  border-color:transparent #f3961c;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* creates the smaller triangle */
+.example-obtuse:after {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  right:110px;
+  border-width:0 0 30px 20px;
+  border-style:solid;
+  border-color:transparent #fff;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+
+/* ============================================================================================================================
+== TWITTER
+** ============================================================================================================================ */
+
+.example-twitter {
+  position:relative;
+  padding:15px;
+  margin:100px 0 0.5em;
+  color:#333;
+  background:#eee;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+.example-twitter p {font-size:28px; line-height:1.25em;}
+
+/* this isn't necessary, just saves me having to edit the HTML of the demo */
+.example-twitter:before {
+  content:url(twitter-logo.gif);
+  position:absolute;
+  top:-60px;
+  left:0;
+  width:155px;
+  height:36px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates the triangle */
+.example-twitter:after {
+  content:"";
+  position:absolute;
+  top:-30px;
+  left:50px;
+  border:15px solid transparent;
+  border-bottom-color:#eee;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-twitter + p {padding-left:15px; font:14px Arial, sans-serif;}
+
+
+/* ============================================================================================================================
+== NUMBER
+** ============================================================================================================================ */
+
+.example-number {
+  position:relative;
+  width:200px;
+  height:200px;
+  margin:50px 0 200px;
+  text-align:center;
+  font:140px/200px Arial, sans-serif;
+  color:#fff;
+  background:#C91F2C;
+}
+
+/* creates the larger triangle */
+.example-number:before {
+  content:"";
+  position:absolute;
+  bottom:-140px;
+  right:0;
+  border-width:0 0 140px 140px;
+  border-style:solid;
+  border-color:transparent #C91F2C;
+}
+
+/* creates the larger triangle */
+.example-number:after {
+  content:"";
+  position:absolute;
+  bottom:-140px;
+  right:85px;
+  border-width:0 0 140px 55px;
+  border-style:solid;
+  border-color:transparent #fff;
+}
+
+
+/* ============================================================================================================================
+== PINCHED SPEECH BUBBLE (more CSS3)
+** ============================================================================================================================ */
+
+.pinched {
+  position:relative;
+  padding:15px;
+  margin:50px 0 3em;
+  text-align:center;
+  color:#fff;
+  background:#333;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* creates a rectangle of the colour wanted for the pointy bit */
+.pinched:before {
+  content:"";
+  position:absolute;
+  top:-20px;
+  left:50%;
+  width:100px;
+  height:20px;
+  margin:0 0 0 -50px;
+  background:#333;
+}
+
+/* creates a rounded rectangle to cover part of the rectangle generated above */
+.pinched:after {
+  content:"";
+  position:absolute;
+  top:-20px;
+  left:0;
+  width:50%;
+  height:20px;
+  background:#fff;
+  /* css3 */
+  -webkit-border-bottom-right-radius:15px;
+  -moz-border-radius-bottomright:15px;
+  border-bottom-right-radius:15px;
+}
+
+/* creates the other rounded rectangle */
+.pinched > :first-child:before {
+  content:"";
+  position:absolute;
+  top:-20px;
+  right:0;
+  width:50%;
+  height:20px;
+  background:#fff;
+  /* css3 */
+  -webkit-border-bottom-left-radius:15px;
+  -moz-border-radius-bottomleft:15px;
+  border-bottom-left-radius:15px;
+}
+
+
+/* ============================================================================================================================
+== OVAL SPEECH BUBBLE (more CSS3)
+** ============================================================================================================================ */
+
+.oval-speech {
+  position:relative;
+  width:270px;
+  padding:50px 40px;
+  margin:1em auto 50px;
+  text-align:center;
+  color:#fff;
+  background:#5a8f00;
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#b8db29), to(#5a8f00));
+  background:-moz-linear-gradient(#b8db29, #5a8f00);
+  background:-o-linear-gradient(#b8db29, #5a8f00);
+  background:linear-gradient(#b8db29, #5a8f00);
+  /*
+  NOTES:
+  -webkit-border-radius:220px 120px; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:220px / 120px; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:220px 120px;
+  -webkit-border-top-right-radius:220px 120px;
+  -webkit-border-bottom-right-radius:220px 120px;
+  -webkit-border-bottom-left-radius:220px 120px;
+  -moz-border-radius:220px / 120px;
+  border-radius:220px / 120px;
+}
+
+.oval-speech p {font-size:1.25em;}
+
+/* creates part of the curve */
+.oval-speech:before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  bottom:-30px;
+  right:50%;
+  height:30px;
+  border-right:60px solid #5a8f00;
+  background:#5a8f00; /* need this for webkit - bug in handling of border-radius */
+  /* css3 */
+  -webkit-border-bottom-right-radius:80px 50px;
+  -moz-border-radius-bottomright:80px 50px;
+  border-bottom-right-radius:80px 50px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(0, -2px);
+  -moz-transform:translate(0, -2px);
+  -ms-transform:translate(0, -2px);
+  -o-transform:translate(0, -2px);
+  transform:translate(0, -2px);
+}
+
+/* creates part of the curved pointy bit */
+.oval-speech:after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  bottom:-30px;
+  right:50%;
+  width:60px;
+  height:30px;
+  background:#fff;
+  /* css3 */
+  -webkit-border-bottom-right-radius:40px 50px;
+  -moz-border-radius-bottomright:40px 50px;
+  border-bottom-right-radius:40px 50px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(-30px, -2px);
+  -moz-transform:translate(-30px, -2px);
+  -ms-transform:translate(-30px, -2px);
+  -o-transform:translate(-30px, -2px);
+  transform:translate(-30px, -2px);
+}
+
+
+/* ============================================================================================================================
+== OVAL THOUGHT BUBBLE (more CSS3)
+** ============================================================================================================================ */
+
+.oval-thought {
+  position:relative;
+  width:270px;
+  padding:50px 40px;
+  margin:1em auto 80px;
+  text-align:center;
+  color:#fff;
+  background:#075698;
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+  background:-moz-linear-gradient(#2e88c4, #075698);
+  background:-o-linear-gradient(#2e88c4, #075698);
+  background:linear-gradient(#2e88c4, #075698);
+  /*
+  NOTES:
+  -webkit-border-radius:220px 120px; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:220px / 120px; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:220px 120px;
+  -webkit-border-top-right-radius:220px 120px;
+  -webkit-border-bottom-right-radius:220px 120px;
+  -webkit-border-bottom-left-radius:220px 120px;
+  -moz-border-radius:220px / 120px;
+  border-radius:220px / 120px;
+}
+
+.oval-thought p {font-size:1.25em;}
+
+/* creates the larger circle */
+.oval-thought:before {
+  content:"";
+  position:absolute;
+  bottom:-20px;
+  left:50px;
+  width:30px;
+  height:30px;
+  background:#075698;
+  /* css3 */
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+  border-radius:30px;
+}
+
+/* creates the smaller circle */
+.oval-thought:after {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  left:30px;
+  width:15px;
+  height:15px;
+  background:#075698;
+  /* css3 */
+  -webkit-border-radius:15px;
+  -moz-border-radius:15px;
+  border-radius:15px;
+}
+
+/* ============================================================================================================================
+== OVAL SPEECH BUBBLE WITH QUOTATION MARKS (more CSS3)
+** ============================================================================================================================ */
+
+.oval-quotes {
+  position:relative;
+  width:400px;
+  height:350px;
+  margin:2em auto 10px;
+  color:#000;
+  background:#ffed26;
+  /* css3 */
+  /*
+  NOTES:
+  -webkit-border-radius:Apx Bpx; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:Apx / Bpx; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:400px 350px;
+  -webkit-border-top-right-radius:400px 350px;
+  -webkit-border-bottom-right-radius:400px 350px;
+  -webkit-border-bottom-left-radius:400px 350px;
+  -moz-border-radius:400px / 350px;
+  border-radius:400px / 350px;
+}
+
+/* creates opening quotation mark */
+.oval-quotes:before {
+  content:"\201C";
+  position:absolute;
+  z-index:1;
+  top:20px;
+  left:20px;
+  font:80px/1 Georgia, serif;
+  color:#ffed26;
+}
+
+/* creates closing quotation mark */
+.oval-quotes:after {
+  content:"\201D";
+  position:absolute;
+  z-index:1;
+  bottom:0;
+  right:20px;
+  font:80px/0.25 Georgia, serif;
+  color:#ffed26;
+}
+
+.oval-quotes p {
+  width:250px;
+  height:250px;
+  padding:50px 0 0;
+  margin:0 auto;
+  text-align:center;
+  font-size:35px;
+}
+
+/* creates smaller curve */
+.oval-quotes p:before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  bottom:-30px;
+  right:55%;
+  width:180px; /* wider than necessary to make it look a bit better in IE8 */
+  height:60px;
+  background:#fff; /* need this for webkit - bug in handling of border-radius */
+  /* css3 */
+  -webkit-border-bottom-right-radius:40px 50px;
+  -moz-border-radius-bottomright:40px 50px;
+  border-bottom-right-radius:40px 50px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(-30px, -2px);
+  -moz-transform:translate(-30px, -2px);
+  -ms-transform:translate(-30px, -2px);
+  -o-transform:translate(-30px, -2px);
+  transform:translate(-30px, -2px);
+}
+
+/* creates larger curve */
+.oval-quotes p:after {
+  content:"";
+  position:absolute;
+  z-index:-2;
+  bottom:-30px;
+  right:25%;
+  height:80px;
+  border-right:200px solid #ffed26;
+  background:#ffed26; /* need this for webkit - bug in handling of border-radius */
+  /* css3 */
+  -webkit-border-bottom-right-radius:200px 100px;
+  -moz-border-radius-bottomright:200px 100px;
+  border-bottom-right-radius:200px 100px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(0, -2px);
+  -moz-transform:translate(0, -2px);
+  -ms-transform:translate(0, -2px);
+  -o-transform:translate(0, -2px);
+  transform:translate(0, -2px);
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+.oval-quotes + p {
+  position:relative; /* part of the IE8 width compromise */
+  width:150px;
+  margin:0 0 2em;
+  font-size:18px;
+  font-weight:bold;
+}
+
+
+/* ============================================================================================================================
+== RECTANGLE-BORDER STYLE WITH CURVE
+** ============================================================================================================================ */
+
+.rectangle-speech-border {
+  position:relative;
+  padding:20px 10px;
+  margin:1em 0 3em;
+  /* margin-left: 100px; */
+  border:5px solid #E8003C;
+  text-align:center;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  border-radius:20px;
+}
+
+/* creates larger curve */
+.rectangle-speech-border:before {
+  content:"";
+  position:absolute;
+  z-index:10;
+  bottom:-30px;
+  left:50px;
+  width:40px;
+  height:30px;
+  border-style:solid;
+  border-width:0 5px 5px 0;
+  border-color:#E8003C;
+  background:transparent;
+  /* css3 */
+  -webkit-border-bottom-right-radius:80px 50px;
+  -moz-border-radius-bottomright:80px 50px;
+  border-bottom-right-radius:80px 50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates smaller curve */
+.rectangle-speech-border:after {
+  content:"";
+  position:absolute;
+  z-index:10;
+  bottom:-30px;
+  left:50px;
+  /* left: 56px; */
+  width:20px;
+  height:30px;
+  border-style:solid;
+  border-width:0 5px 5px 0;
+  border-color:#E8003C;
+  background:transparent;
+  /* css3 */
+  -webkit-border-bottom-right-radius:40px 50px;
+  -moz-border-radius-bottomright:40px 50px;
+  border-bottom-right-radius:40px 50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet */
+.rectangle-speech-border > :first-child:before {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  /* left:45px; */
+  left:49px;
+  width:5px;
+  height:5px;
+  background:#E8003C;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* creates a white rectangle to cover part of the oval border*/
+.rectangle-speech-border > :first-child:after {
+  content:"";
+  position:absolute;
+  bottom:-10px;
+  left:70px;
+  width:20px;
+  height:15px;
+  background:#fff;
+}
+
+/* ============================================================================================================================
+== OVER SPEECH BUBBLE, EMPTY, WITH BORDER (more CSS3)
+** ============================================================================================================================ */
+
+.oval-speech-border {
+  position:relative;
+  padding:70px 30px;
+  margin:1em auto 60px;
+  border:10px solid #f3961c;
+  text-align:center;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  /*
+  NOTES:
+  -webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:240px 140px;
+  -webkit-border-top-right-radius:240px 140px;
+  -webkit-border-bottom-right-radius:240px 140px;
+  -webkit-border-bottom-left-radius:240px 140px;
+  -moz-border-radius:240px / 140px;
+  border-radius:240px / 140px;
+}
+
+/* creates larger curve */
+.oval-speech-border:before {
+  content:"";
+  position:absolute;
+  z-index:2;
+  bottom:-40px;
+  right:50%;
+  width:50px;
+  height:30px;
+  border-style:solid;
+  border-width:0 10px 10px 0;
+  border-color:#f3961c;
+  margin-right:-10px;
+  background:transparent;
+  /* css3 */
+  -webkit-border-bottom-right-radius:80px 50px;
+  -moz-border-radius-bottomright:80px 50px;
+  border-bottom-right-radius:80px 50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates smaller curve */
+.oval-speech-border:after {
+  content:"";
+  position:absolute;
+  z-index:2;
+  bottom:-40px;
+  right:50%;
+  width:20px;
+  height:31px;
+  border-style:solid;
+  border-width:0 10px 10px 0;
+  border-color:#f3961c;
+  margin-right:20px;
+  background:transparent;
+  /* css3 */
+  -webkit-border-bottom-right-radius:40px 50px;
+  -moz-border-radius-bottomright:40px 50px;
+  border-bottom-right-radius:40px 50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet */
+.oval-speech-border > :first-child:before {
+  content:"";
+  position:absolute;
+  z-index:1;
+  bottom:-40px;
+  right:50%;
+  width:10px;
+  height:10px;
+  margin-right:45px;
+  background:#f3961c;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* creates a white rectangle to cover part of the oval border*/
+.oval-speech-border > :first-child:after {
+  content:"";
+  position:absolute;
+  z-index:1;
+  bottom:-10px;
+  right:50%;
+  width:30px;
+  height:15px;
+  background:#fff;
+}
+
+/* ============================================================================================================================
+== OVER THOUGHT BUBBLE, EMPTY, WITH BORDER (more CSS3)
+** ============================================================================================================================ */
+
+.oval-thought-border {
+  position:relative;
+  padding:20px 20px;
+  margin:1em auto 80px;
+  border:5px solid #c81e2b;
+  text-align:center;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  /*
+  NOTES:
+  -webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:240px 140px;
+  -webkit-border-top-right-radius:240px 140px;
+  -webkit-border-bottom-right-radius:240px 140px;
+  -webkit-border-bottom-left-radius:240px 140px;
+  -moz-border-radius:240px / 140px;
+  border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.oval-thought-border:before {
+  content:"";
+  position:absolute;
+  z-index:10;
+  bottom:-40px;
+  /* right:100px; */
+  left: 100px;
+  width:50px;
+  height:50px;
+  border:5px solid #c81e2b;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:50px;
+  -moz-border-radius:50px;
+  border-radius:50px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+
+/* creates the smaller circle */
+.oval-thought-border:after {
+  content:"";
+  position:absolute;
+  z-index:5;
+  bottom:-60px;
+  /* right:50px; */
+  left: 50px;
+  width:30px;
+  height:30px;
+  border:5px solid #c81e2b;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+  border-radius:30px;
+  /* reduce the damage in FF3.0 */
+  display:block;
+}
+
+
+

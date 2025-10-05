@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content_block">
+    <form method="post" action="/createUseCase">
+            <div class="grid_container_useCase">
+    
+
+                <div class="item" >
+                
+                    <div class="form-group">
+
+                            <label for="personaGender" class="col-sm-2 col-form-label">M/V</label>
+                                <select name="personaGender" class="form-control" id="personaGender" >
+                                    {% for o in selectListPersonaGender %}
+                                    <option value="{{ o.gender }}">{{ o.gender }}</option>
+                                    {% endfor %}
+                                </select>
+                            
+
+                            <label for="personaName" class="col-sm-2 col-form-label">Naam</label>
+
+                                <input type="text" class="form-control" id="personaName" name="personaName" placeholder="Name"  required />
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                    
+                </div>
+                <div class="itemDescription">
+                            <label for="useCaseDescription" class="col-form-label">Use Case</label>
+                            <textarea class="form-control" id="useCaseDescription" name="useCaseDescription" rows="6" placeholder="Describe the use case here..." required></textarea>
+                </div>
+
+            </div>
+    </form>
+    <hr/>
+
+    {% for o in useCaseList %}
+    <div class="grid_container_useCase">
+
+
+        <div class="item" >
+            
+            <div class="personaIcon">
+                <p> <strong>{{ o.persona }}</strong></p>
+
+                {% if (o.personaGender != '') and (o.personaName != '') %}
+                    <p> <strong>{{ o.personaName }}</strong></p>
+
+                <img id="selectedPersonaIcon" src="{{ url_for('static', filename='img/avatars/' + o.personaGender +'IlionxEmployee.png') }}" alt="Persona Icon" width="100px" height="100px"> 
+                {%else %}
+                    <p> Unknown</p>
+                    <img id="selectedPersonaIcon" src="{{ url_for('static', filename='img/avatars/anonymous.png') }}" alt="Persona Icon" width="100px" height="100px"> 
+                {%endif%}
+            </div>
+        </div>
+        <div class="itemDescription" >
+                <textarea class="form-control" id="useCaseDescription" name="useCaseDescription" rows="6"    disabled>{{o.description}}</textarea>
+
+                
+        </div>
+
+            
+    </div>
+        {% endfor %}
+
+
+
+
+
+
+
+</div>  
+
+
+
+
+
+
+
+
+        <!--
+<script>
+
+    window.static_folder = "{{url_for('static',filename='img/avatars')}}";
+        
+    const updatePage =   function(){
+        //alert('hi');
+        //alert("{{selectListPersona}}");
+        const selectListPersona = "{{selectListPersona}}";
+        //alert(selectListPersona);
+        
+        
+        // Assuming selectListPersona is available in the global scope
+        const firstName             = document.getElementById("firstName_{{personaIndex}}");
+        const selectedPersona       = document.getElementById("persona");
+        const selectedGender        = document.getElementById("gender");
+
+        const selectedPersonaIcon   = document.getElementById("selectedPersonaIcon");
+        
+        const yourPersona           = document.getElementById("yourPersona");
+
+        const nodePersona = document.createTextNode(selectedPersona.value);
+        const nodeName = document.createTextNode(firstName.value);
+
+        yourPersona.innerHTML = "";
+        yourPersona.appendChild(nodePersona);
+        yourName.innerHTML = "";
+        yourName.appendChild(nodeName);
+
+
+        selectedPersonaIcon.src = `${window.static_folder}/${selectedGender.value}${selectedPersona.value}.png`;
+
+    }
+    this.persona.addEventListener("change", updatePage );
+    this.gender.addEventListener("change", updatePage );
+    this.firstName.addEventListener("change", updatePage );
+
+
+    ;
+
+
+  </script>
+  
+-->
+
+
+
+
+{% endblock %}

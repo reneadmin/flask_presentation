@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Data Management &amp; AI{% endblock %}</h1>
+    {% for post in posts %}
+    <a href="{{ url_for('post', post_id=post['id']) }}">
+        <h2>{{ post['title'] }}</h2>
+    </a>
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+    <hr>
+    {% endfor %}
+
+
+
+
+
+
+{% endblock %}
+
+
+<!--
+
+
+
+
+    <div>
+    <div class="grid_container_index">
+            <div class="item">
+
+                <img src="{{url_for('static',filename='img/60.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+            <div class="item">
+                <img src="{{url_for('static',filename='img/anja.png')}}"  width="200px" height="200px" alt="img">
+            </div>  
+            <div class="item">
+
+                <img src="{{url_for('static',filename='img/Angels.png')}}" width="200px" height="200px"  alt="img">
+            </div>               
+
+     </div>
+      <div class="grid_container_index">
+            <div class="item">
+                <img src="{{url_for('static',filename='img/lieke.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+                
+            <div class="item">
+                <img src="{{url_for('static',filename='img/maaike.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+                
+            <div class="item">
+                <img src="{{url_for('static',filename='img/taeke.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+    </div>
+
+    <div class="grid_container_index">
+
+
+            <div class="item">
+                <img src="{{url_for('static',filename='img/tt.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+            <div class="item">
+
+                <img src="{{url_for('static',filename='img/nd.jpg')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+            <div class="item">
+                <img src="{{url_for('static',filename='img/d3.jpeg')}}"  width="200px" height="200px" alt="img">
+            </div>
+    </div>
+
+   
+    <div class="grid_container_index">
+
+
+            <div class="item">
+                <img src="{{url_for('static',filename='img/randstad.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+            <div class="item">
+
+                <img src="{{url_for('static',filename='img/ricoh.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+            <div class="item">
+                <img src="{{url_for('static',filename='img/inergy.jpeg')}}"  width="200px" height="200px" alt="img">
+            </div>
+    </div>
+
+   
+
+
+    <div class="grid_container_index">
+
+
+            <div class="item">
+                <img src="{{url_for('static',filename='img/hso.jpeg')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+            <div class="item">
+
+                <img src="{{url_for('static',filename='img/inergy.jpeg')}}"  width="200px" height="200px" alt="img">
+            </div>
+
+            <div class="item">
+                <img src="{{url_for('static',filename='img/ilionxLogo.png')}}"  width="200px" height="200px" alt="img">
+            </div>
+    </div>
+
+   
+-->

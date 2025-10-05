@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg version="1.1" width="400px" height="600px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<!-- Arrow Left -->
+<g transform="scaleY(0.9) translate(0 0)"><path d="M110.050166,0 L308,300.720785 L96.7733032,621 L0,621 L212.448119,300.720785 L13.8875736,0 L110.050166,0 Z" fill="#999999"  stroke="darkgrey" stroke-width="0.7px" fill-opacity="0.3"></path></g>
+
+
+
+
+</svg>

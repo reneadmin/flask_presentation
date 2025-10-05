@@ -1,0 +1,173 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <div class="slide_content">
+
+        {% for b in slide_blocks %}
+            
+            {% if b.type in ["Stelling", "Vraag", "Boodschap", "Denkwolk", "Divider", "Fullscreen"] %}
+                <div class="slide_block_grid">
+        
+                    {%if b.type =="Divider"%}
+                    <div class="item_divider">
+                    </div>
+                    {%endif%}
+                    {%if b['textCallout'] %}
+                        <div class="item_grid_avatar">
+                            <img src="{{url_for('static',filename='img/avatars/' + b.personaGender + b.persona + '.png')}}" width="202px" height="202px" alt="img">
+                            <div class="avatarName">
+                                <div>{{ b.personaName }} - {{ b.persona }}</div>
+                            </div>
+                            
+                        </div>  
+                        <div class="item_grid_callout">
+                            {% if b.type == "Denkwolk"%}
+                                <blockquote class="oval-thought-border">
+                                    <p >{{ b['textCallout'] }}</p>
+                                </blockquote>
+                            {% else %}
+                                <blockquote class="rectangle-speech-border">
+                                    <p >{{ b['textCallout'] }}</p>
+                                </blockquote>
+                            {% endif%}
+                        </div>
+                    {% endif %}
+
+                    {% if b.blockImage %}
+                        <div class="item_grid_image_{{b.type}}">
+                            <img  src="{{url_for('static',filename='img/' + b.blockImage)}}"  height="100%" alt="img">
+                        </div>
+                    {% endif %}
+
+                    {% if b.contentType == 'TextArea'%}
+                        <div class="welcome_text">{{b.contentText}}</div> 
+                    {% elif b.contentType == 'List' %}  <!-- The block has text content -->
+
+                        <div class="item_list_container_{{b.type}}">
+                        
+                            {% set list = b.contentText.split(',') %}
+                            {% for item in list %}
+                                <div class="bullet">
+                                    <div class="list">
+                                        <figure class="ballred"><span class="shadow"></span></figure>
+                                    </div>
+                                </div>
+                                <div class = "text"> {{item | safe}}</div>
+
+                            {% endfor %}
+
+
+                        </div>
+                    {% elif b.contentType == 'Iframe'%}
+
+
+                        <div class="item_iframe">
+                            <iframe src="{{url_for('static',filename='iframes/')+b.contentText}}" width="1000px" height="600px" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                   
+
+                    {% endif %}
+
+                    {% if b.type == "Stelling"%}
+                    <div class="btn-group item_button" role="group" aria-label="Basic example" >
+                        <button type="button" class="btn btn-success"><a href="#"></a>Eens</button>
+                        <button type="button" class="btn btn-danger">Oneens</button>
+                    </div>
+                    {% endif %}
+
+                </div>     
+            {% endif %}
+
+
+            {% if b.type == "Dialoog" %}
+                <!-- 
+                    Dialoog has 2 blocks, no more, no less 
+                    The first block opens the slide block Dialoog
+                    The second block closes the slide block Dialoog
+                -->
+                {% if b.blockNumber == 1 %}
+                    <div class="slide_block_dialoog_container">
+                {% endif %}
+                        <div class="item">
+                            <div class="slide_block_grid">
+
+                                <div class="item_grid_avatar">
+                                    <img src="{{url_for('static',filename='img/avatars/' + b.personaGender + b.persona + '.png')}}" width="201px" height="201px" alt="img">
+                                    <div class="avatarName">
+                                        <div>{{ b.personaName }} - {{ b.persona }}</div>
+                                    </div>
+                        
+                                </div>  
+                                <div class="item_dialoog">
+                                    <blockquote class="rectangle-speech-border">
+                                        <p >{{ b['textCallout'] }}</p>
+                                    </blockquote>
+                                </div>
+                                {% if b.blockImage %}
+                                    <div class="item_grid_image_Dialoog">
+                                        <img  src="{{url_for('static',filename='img/' + b.blockImage)}}"   height="500px" alt="img">
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                {% if b.blockNumber > 1 %}
+                    </div>
+                {% endif %}
+
+
+
+            
+            {% endif %}
+
+
+            {% if b.type == "Agenda" %}
+                <div class="slide_block_agenda">
+
+                     {% if b.blockImage %}
+                        <div class="item_image">
+                            <img  src="{{url_for('static',filename='img/ilionxfooter.svg' )}}" height="353px" alt="img">
+                            <!-- <img  src="{{url_for('static',filename='img/' + b.blockImage)}}" width="400px" height="353px" alt="img"> -->
+                        </div>
+                    {% endif %}
+                    
+
+
+
+
+
+                    {% for section in  slide_sections %}
+
+                            {%if slide['name']==section.name%}
+                                <div class="item_agenda">
+                                    <div class="agenda">
+                                        <figure class="ballred"><span class="shadow"></span></figure>
+                                    </div>
+                                </div>
+                            {%else%}
+                                <div class="item_agenda">
+                                    <div class="agenda">
+                                        <figure class="ballgrey"><span class="shadow"></span></figure>
+                                    </div>
+                                </div>
+                            {%endif%}
+                            <div class = "item_agenda_text"> {{section.name}}</div>
+                    {%endfor%}    
+              
+
+
+   
+
+                </div>     
+            {% endif %}
+    
+
+
+        {% endfor %}
+
+
+    </div>
+{% endblock %}

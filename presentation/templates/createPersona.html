@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content_block">
+<h1>{% block persona %} Available Personas {% endblock %}</h1>
+<div class="grid_container">
+    {% for o in selectListPersona %}
+    <div class="item">
+        <img src="{{url_for('static',filename='img/avatars/Man' + o.persona + '.png')}}" width="100" height="100" alt="img">
+        <p>{{ o.persona }} (Man)</p>
+    </div>
+    <div class="item">
+        
+        <img src="{{url_for('static',filename='img/avatars/Woman' + o.persona + '.png')}}" width="100" height="100" alt="img">
+        <p>{{ o.persona }} (Woman)</p>
+    </div>
+    
+    {% endfor %}
+</div>
+
+</div>
+
+<div class="content_block">
+    <h1>{% block selection %} Your Selections {% endblock %}</h1>
+    
+<form method="post">
+    <div class="form-group">
+            <label for="firstName" >Your Name:</label>
+            <input type="text" id="firstName" name="firstName">
+    
+        <label for="persona">Persona:</label>
+       
+        <select name="persona" class="Input" id="persona" >
+            {% for o in selectListPersona %}
+            <option value="{{ o.persona }}">{{ o.persona }}</option>
+            {% endfor %}
+        </select>
+
+
+        <label for="gender">Gender:</label>
+       
+        <select name="gender" class="Input" id="gender" >
+            {% for o in selectListPersonaGender %}
+            <option value="{{ o.gender }}">{{ o.gender }}</option>
+            {% endfor %}
+        </select>
+
+    </div>
+
+    </div>
+    <div class="content_block">
+
+        <h1> Your Persona</h1>
+        <div class="form-group">
+            
+            <div >
+                <div class="overlay-text-persona" id="yourPersona">persona</div>
+                
+                <img id="selectedPersonaIcon" src="{{url_for('static',filename='img/avatars/anonymous.png')}}" width="250" height="250" alt="img"/>
+                <div class="overlay-text-name" id="yourName">name</div>
+            
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+
+
+
+<script>
+
+    window.static_folder = "{{url_for('static',filename='img/avatars')}}";
+        
+    const updatePage =   function(){
+        //alert('hi');
+        //alert("{{selectListPersona}}");
+        const selectListPersona = "{{selectListPersona}}";
+        //alert(selectListPersona);
+        
+        
+        // Assuming selectListPersona is available in the global scope
+        const firstName             = document.getElementById("firstName");
+        const selectedPersona       = document.getElementById("persona");
+        const selectedGender        = document.getElementById("gender");
+
+        const selectedPersonaIcon   = document.getElementById("selectedPersonaIcon");
+        
+        const yourPersona           = document.getElementById("yourPersona");
+
+        const nodePersona = document.createTextNode(selectedPersona.value);
+        const nodeName = document.createTextNode(firstName.value);
+
+        yourPersona.innerHTML = "";
+        yourPersona.appendChild(nodePersona);
+        yourName.innerHTML = "";
+        yourName.appendChild(nodeName);
+
+
+        selectedPersonaIcon.src = `${window.static_folder}/${selectedGender.value}${selectedPersona.value}.png`;
+
+    }
+    this.persona.addEventListener("change", updatePage );
+    this.gender.addEventListener("change", updatePage );
+    this.firstName.addEventListener("change", updatePage );
+
+
+    ;
+
+
+  </script>
+  
+
+
+
+
+
+{% endblock %}
